@@ -10,7 +10,7 @@ source:
   sha256: cebcdd3905b04bd233aadc73189391b787f7cb9dd47100e4b8de8d6a4f0306ec
 
 build:
-  number: 0
+  number: 1
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
@@ -22,22 +22,23 @@ build:
 
 requirements:
   build:
+    - python
     - {{ compiler('c') }}  # TODO: Remove when the upstream project updates the CMakeLists.txt file
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - cmake >=3.30
     - make
-  host:
+    - cmake >=3.30
     - breathe >=4.3.0
     - doxygen
-    - eigen >=3.3.7
     - libboost-python-devel >=1.82
-    - setuptools >=77
-    - setuptools_scm >=8
+    - setuptools >=62
+    - setuptools_scm >=6.2
     - sphinx >=3.0.4
     - sphinx_rtd_theme >=0.4.3
     - sphinxcontrib-bibtex
     - tardigrade_vector_tools >=0.8.7
+  host:
+    - eigen >=3.3.7
   run:
     - eigen >=3.3.7
 
