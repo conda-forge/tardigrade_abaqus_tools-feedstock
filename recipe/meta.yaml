@@ -10,7 +10,7 @@ source:
   sha256: 10071dd4291d0c09d4a8b9200753fdfb2eecf01eb3980926f181ff38d094c179
 
 build:
-  number: 0
+  number: 1
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
